@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Data</title>
+  </head>
+  <body>
+
+    <div id="Inventory"></div>
+    <script>
+      const fetchInventory = async () => {
+        try{
+            const res = await fetch(
+          "http://127.0.0.1:8080/campus/inventory/computers",
+
+          {
+            headers: {
+              'Authorization':
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjM5OTVkMjk5MGYyMjZmYWExNjQxMjQiLCJpYXQiOjE3MTUxODAwNjksImV4cCI6MTcxNTE4MTg2OX0.nIUit_Dbgd4rOmeh4WeOGJ3cEnjgDodupBAYHzBc3IQ",
+            },
+          },
+        );
+
+        const computers = await res.json()
+        console.log(computers)
+    
+        }catch(err){
+            throw err
+        }
+      };
+
+      fetchInventory()
+    </script>
+  </body>
+</html>
