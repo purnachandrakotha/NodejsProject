@@ -13,7 +13,7 @@ router.all('/json', (req, res)=>{
     res.sendFile('/config/swagger.json', {root:'.'})
 })
 
-// Swagger
+// Swagger info
 const swaggerUi = require('swagger-ui-express');
 router.use('/swagger', swaggerUi.serve, swaggerUi.setup(require('../config/swagger.json')))
 

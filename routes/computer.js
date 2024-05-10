@@ -18,8 +18,12 @@ router.route('/:id')
 .patch(computerCtrl.update)
 .delete(computerCtrl.delete)
 
-router.route('/:tagNumber')
+router.route('/tagNumber/:tagNumber')
 .get(computerCtrl.read)
 .put(computerCtrl.update)
+.delete(computerCtrl.delete)
 
+
+router.route('/activeFlag/:activeFlag')
+.get(computerCtrl.read)
 module.exports = router;
